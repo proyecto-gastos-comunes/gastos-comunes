@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
    <!--  <link rel="icon" href="../../favicon.ico"> -->
+   <link rel="stylesheet" href="css/estilo.css">
 
-    <title>reporte gastos comunes</title>
+    <title>Reporte gastos comunes</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,18 +39,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Edificio 1</a>
+          <a class="navbar-brand" href="menu_adm.html">Administrador analistas</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-          	 <li><a href="#">Reporte G.C.</a></li>
-            <li><a href="#">Reporte Usuario</a></li>
-            <li><a href="#">Administracion</a></li>
-            <li><a href="#">Perfil</a></li>
-            <li><a href="#">Reporte</a></li>
-            <li><a href="#">Usuario</a></li>
-            <li><a href="#">Perfil</a></li>
-            <li><a href="#">Ayuda</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Salir</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -62,131 +57,192 @@
 
           <h2 class="sub-header">Repote pago gastos comunes</h2>
           <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Dpto</th>
-                  <th>Fecha de pago</th>
-                  <th>Monto</th>
-                  <th>Estado</th>
-                  <th>Consumo</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="row">
+              <div class="col-md-2">
+                <div class="accordion" id="leftMenu">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                              Categorías
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+                              Reportes
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="reporte_fichas.html"> Reporte fichas</a></li>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="reportePagoGastosComunes.html"> Reporte pago G.C.</a></li>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="R-GastosComunes.html"> Reporte G.C.</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseThree">
+                              Mantenenedor
+                            </a>
+                        </div>
+                        <div id="collapseThree" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-edit"></span><a href="mantenedordepartamento.html"> Mantenedor departamento</a></li>
+                                    <li><span class="glyphicon glyphicon-edit"></span><a href="mantenedoredificio.html"> Mantenedor edificio</a></li>
+                                </ul>                 
+                            </div>
+                         </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+                              Pagos
+                            </a>
+                        </div>
+                        <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-euro"></span><a href="pagos.html"> Pagar G.C.</a></li>
+                                    <li><span class="glyphicon glyphicon-euro"></span><a href="recaudacion.html"> Pagar recaudación</a></li>
+                                </ul>                 
+                            </div>
+                         </div>
+                    </div>
+                </div>
+              </div>  
+              <div class="col-md-10">
+              <table class="table table-striped" >
+                <thead>
+                  <tr>
+                    <th>Dpto</th>
+                    <th>Fecha de pago</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                    <th>Consumo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1,001</td>
+                    <td>Lorem</td>
+                    <td>ipsum</td>
+                    <td>dolor</td>
+                    <td>sit</td>
+                  </tr>
+                  <tr>
+                    <td>1,002</td>
+                    <td>amet</td>
+                    <td>consectetur</td>
+                    <td>adipiscing</td>
+                    <td>elit</td>
+                  </tr>
+                  <tr>
+                    <td>1,003</td>
+                    <td>Integer</td>
+                    <td>nec</td>
+                    <td>odio</td>
+                    <td>Praesent</td>
+                  </tr>
+                  <tr>
+                    <td>1,003</td>
+                    <td>libero</td>
+                    <td>Sed</td>
+                    <td>cursus</td>
+                    <td>ante</td>
+                  </tr>
+                  <tr>
+                    <td>1,004</td>
+                    <td>dapibus</td>
+                    <td>diam</td>
+                    <td>Sed</td>
+                    <td>nisi</td>
+                  </tr>
+                  <tr>
+                    <td>1,005</td>
+                    <td>Nulla</td>
+                    <td>quis</td>
+                    <td>sem</td>
+                    <td>at</td>
+                  </tr>
+                  <tr>
+                    <td>1,006</td>
+                    <td>nibh</td>
+                    <td>elementum</td>
+                    <td>imperdiet</td>
+                    <td>Duis</td>
+                  </tr>
+                  <tr>
+                    <td>1,007</td>
+                    <td>sagittis</td>
+                    <td>ipsum</td>
+                    <td>Praesent</td>
+                    <td>mauris</td>
+                  </tr>
+                  <tr>
+                    <td>1,008</td>
+                    <td>Fusce</td>
+                    <td>nec</td>
+                    <td>tellus</td>
+                    <td>sed</td>
+                  </tr>
+                  <tr>
+                    <td>1,009</td>
+                    <td>augue</td>
+                    <td>semper</td>
+                    <td>porta</td>
+                    <td>Mauris</td>
+                  </tr>
+                  <tr>
+                    <td>1,010</td>
+                    <td>massa</td>
+                    <td>Vestibulum</td>
+                    <td>lacinia</td>
+                    <td>arcu</td>
+                  </tr>
+                  <tr>
+                    <td>1,011</td>
+                    <td>eget</td>
+                    <td>nulla</td>
+                    <td>Class</td>
+                    <td>aptent</td>
+                  </tr>
+                  <tr>
+                    <td>1,012</td>
+                    <td>taciti</td>
+                    <td>sociosqu</td>
+                    <td>ad</td>
+                    <td>litora</td>
+                  </tr>
+                  <tr>
+                    <td>1,013</td>
+                    <td>torquent</td>
+                    <td>per</td>
+                    <td>conubia</td>
+                    <td>nostra</td>
+                  </tr>
+                  <tr>
+                    <td>1,014</td>
+                    <td>per</td>
+                    <td>inceptos</td>
+                    <td>himenaeos</td>
+                    <td>Curabitur</td>
+                  </tr>
+                  <tr>
+                    <td>1,015</td>
+                    <td>sodales</td>
+                    <td>ligula</td>
+                    <td>in</td>
+                    <td>libero</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
           </div>
  </div>
 
