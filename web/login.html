@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="fonts/favicon">
+    <!-- <link rel="icon" href="fonts/favicon"> -->
 
     <title>Login</title>
 
@@ -18,33 +18,75 @@
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/bootstrap.min.js"></script>
 
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+  // $("#mensaje").hide();
+function validar(){
+var password = document.getElementById('pass').value;
+var usuario = document.getElementById('user').value;
+    // if(password == '1234' && usuario=='pablo')
+ if(usuario=='Admin' && password == '1234'){
+    //    $("#mensaje").show();
+    // $(".content").hide();
+    // $("#mensaje").html('ingreso correcto');
+    alert("Bienvenido Al Sistema De Gastos Comunes Don "+usuario);
+    // $("#mensaje").fadeIn(9000);
+    // $("#mensaje").fadeOut(9000);
+    }else{
+    // $("#mensaje").html('clave incorrecta');
+    alert("usuario y/o clave incorrecto");
+    // $("#mensaje").fadeIn(9000);
+    // $("#mensaje").fadeOut(9000);
+    }
+   
+  
+}
+</script>
+
+
   </head>
 
   <body>
 
     <div class="container">
+      <img src="img/bienvenido.png" onmouseover="this.src='img/bienvenido2.png';" onmouseout="this.src='img/bienvenido.png';"/>
+<!-- <img src="img/bienvenido.png" WIDTH=1150 HEIGHT=150> -->
 
-      <form class="form-signin" role="form">
-        <h1 class="form-signin-heading"><center>Por favor<br> inicie sesión</center></h1>
-        <input type="email" class="form-control" placeholder="Email" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
+      <form class="form-signin" role="form" action="">
+        <h1 class="form-signin-heading"><center>Por favor<br>inicie sesión</center></h1>
+       
+        <input id="user" name="user" type="Usuario" class="form-control" placeholder="Usuario" required autofocus>
+        <input id="pass" name="pass" type="Password" class="form-control" placeholder="Password" required>
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Recordar Contraseña
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" onClick=validar()>
+
+            Ingresar</button>
+
+  
+          </div>
+
       </form>
+  
 
     </div> <!-- /container -->
-
-
+   
+    
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+
   </body>
 </html>
