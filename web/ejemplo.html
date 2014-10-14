@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- <link rel="icon" href="../../favicon.ico"> -->
+<link rel="stylesheet" href="css/estilo.css">
+<title>Reporte gastos comunes</title>
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/dashboard.css" rel="stylesheet">
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+ <script type="text/javascript">
+      $(document).ready(function(){
+          $('#Agua').numeric();
+          $('#Luz').numeric();
+          $('#Gas').numeric();
+          $('#Sueldos').numeric();
+
+ 
+                  });
+          </script>
+
+
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="menu_adm.html">Administrador analistas</a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="#">Home</a></li>
+<li><a href="#">Salir</a></li>
+</ul>
+<form class="navbar-form navbar-right">
+<input type="text" class="form-control" placeholder="Search...">
+</form>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<h2 class="sub-header">Repote pago gastos comunes</h2>
+<div class="table-responsive">
+<div class="row">
+<div class="col-md-2">
+<div class="accordion" id="leftMenu">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+Categorías
+</a>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+Reportes
+</a>
+</div>
+<div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+<div class="accordion-inner">
+<ul>
+<li><span class="glyphicon glyphicon-list-alt"></span><a href="reporte_fichas.html"> Reporte fichas</a></li>
+<li><span class="glyphicon glyphicon-list-alt"></span><a href="reportePagoGastosComunes.html"> Reporte pago G.C.</a></li>
+<li><span class="glyphicon glyphicon-list-alt"></span><a href="R-GastosComunes.html"> Reporte G.C.</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseThree">
+Mantenenedor
+</a>
+</div>
+<div id="collapseThree" class="accordion-body collapse" style="height: 0px; ">
+<div class="accordion-inner">
+<ul>
+<li><span class="glyphicon glyphicon-edit"></span><a href="mantenedordepartamento.html"> Mantenedor departamento</a></li>
+<li><span class="glyphicon glyphicon-edit"></span><a href="mantenedoredificio.html"> Mantenedor edificio</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+Pagos
+</a>
+</div>
+<div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+<div class="accordion-inner">
+<ul>
+<li><span class="glyphicon glyphicon-euro"></span><a href="pagos.html"> Pagar G.C.</a></li>
+<li><span class="glyphicon glyphicon-euro"></span><a href="recaudacion.html"> Pagar recaudación</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-10">
+
+	<form method="post">
+
+  <h5>Agua: </h5>
+        
+        <label>$ </label>
+    <input type="text" name="Agua" id="Agua" />
+        
+        <h5>Luz: </h5>
+           <label>$ </label>
+    <input type="text" name="Luz" id="Luz" />
+      
+        <h5>Gas: </h5>
+
+               <label>$ </label>
+    <input type="text" name="Gas" id="Gas" />
+
+
+          <h5>Sueldos: </h5>
+
+    <label>$ </label>
+    <input type="text" name="Sueldos" id="Sueldos" />
+
+    <br>
+    <br>
+
+    <button class="button" type="button">GUARDAR</button>
+
+    
+    
+    
+</form>
+</div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- // <script src="js/docs.min.js"></script> -->
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

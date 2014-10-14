@@ -1,0 +1,56 @@
+
+CREATE PROCEDURE ingresar_empleado
+(codempleado int,  nom varchar(45), ape varchar(45),dir varchar(45) ,suel int, codtipo_empleado int, cod_edificio int,rut_  int, pass int )
+insert into empleado
+ (cod_empleado , nombre, apellido ,direccion ,sueldo , tipo_empleado_codtipo_empleado, edificio_cod_edificio, rut , contrasena )
+ values 
+ (codempleado ,  nom, ape ,dir ,suel , codtipo_empleado, cod_edificio ,rut_ ,pass);
+
+
+call ingresar_empleado (3,"Alan","Brito ","Riquelme2368",200000,1,1,18200354,1234);
+
+
+CREATE PROCEDURE eliminar_empleado
+( cod_empleado int)
+delete from empleado
+WHERE codempleado = cod_empleado;
+
+call eliminar_empleado(3);
+
+
+CREATE PROCEDURE actualizar_empleado
+(cod_emp int , direccion_ varchar(45) , sueldo_ int , tipo_empleado int, cod_edificio int)
+update empleado
+set empleado.cod_empleado = cod_emp, direccion =direccion_ , sueldo = sueldo_  , tipo_empleado_codtipo_empleado= tipo_empleado , edificio_cod_edificio=cod_edificio 
+WHERE cod_empleado = cod_emp;
+
+
+call actualizar_empleado(1 ,"los olmos 333", 400000, 1,1);
+
+_____________________
+
+
+
+CREATE PROCEDURE eliminar_tipo_empleado
+( codtipo_emp int)
+delete from tipo_empleado
+WHERE codtipo_empleado = codtipo_emp;
+
+call eliminar_tipo_empleado (3);
+
+CREATE PROCEDURE ingresar_turno
+(tipo_empleado int , descripcion varchar(45) , jorn varchar(45))
+insert into tipo_empleado (codtipo_empleado , descripcion , jornada) values (tipo_empleado ,descripcion , jorn);
+
+call ingresar_turno (3 ," aseo", "l a v");
+
+
+CREATE PROCEDURE actualizar_tipo_empleado
+(cod_tipo int , descripcion_ varchar(45) ,jornada_ varchar(45))
+update tipo_empleado
+set tipo_empleado.codtipo_empleado = cod_tip, descripcion =descripcion_ ,jornada = jornada_  
+WHERE codtipo_empleado = cod_tipo;
+
+
+
+

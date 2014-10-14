@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Sistema de registro de pagos </title>
+    <title>Sistema de recaudacion </title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -20,16 +21,23 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.numeric.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('#Agua').numeric();
+          $('#Luz').numeric();
+          $('#Gas').numeric();
+          $('#Sueldos').numeric();
 
-  <body>
+ 
+                  });
+          </script>
+</head>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<body>
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -38,24 +46,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Sistema de registro de pagos</a>
+          <a class="navbar-brand" href="#">Sistema de recaudacion de pagos</a>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Administracion</a></li>
-            <li><a href="#">edificio</a></li>
-            <li><a href="#">conserje</a></li>
-            <li><a href="#">ayuda</a></li>
 
+
+         <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+           
+            <li><a href="#">home</a></li>
+            <li><a href="#">salir</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
+
+              </form>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid">
+
+     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
@@ -64,55 +72,58 @@
             <li><a href="#">mantenedor de departamento</a></li>
             <li><a href="#">mantenedor de usuarios</a></li>
              <li><a href="">mantenedor de edificio</a></li>
-             <li><a href="reporte_fichas.html">reporte  de fichas</a></li> 
             <li><a href="recaudacion.html">registro de recaudacion</a></li>
+            <li><a href="reporte_fichas.html">registro de fichas</a></li>
             <img src="img/edificio.jpg" WIDTH=178 HEIGHT=180>
           </ul>
          
           
           
         </div>
-        <div class="col-sm-7  col-md-5 col-md-offset-1 main">
-          <h1 class="page-header">Cargos</h1>
 
-            <form class="form-signin">
+        
+     
+<div class="col-sm-7 col-sm-offset-1 col-md-5 col-md-offset-1 main">
+  <br>
+  <br>
+          <h1 class="page-header">Datos del usuario</h1>
 
-        <h5>Agua: </h5>
-         <input class="form-control" placeholder="$" required="" autofocus="$" type="text">
+
+
+
+
+
+<form method="post">
+
+  <h5>Agua: </h5>
+        
+        <label>$ </label>
+    <input type="text" name="Agua" id="Agua" />
         
         <h5>Luz: </h5>
-        <input class="form-control" placeholder="$" required="" autofocus="$" type="text">
+           <label>$ </label>
+    <input type="text" name="Luz" id="Luz" />
       
         <h5>Gas: </h5>
-        <input class="form-control" placeholder="$" required="" autofocus="$" type="text">
 
-        <h5>Sueldos: </h5>
-        <input class="form-control" placeholder="$" required="" autofocus="$" type="text">
-      
-       
-        <br>
-        
-          
-        </label>
-        <button class="button" type="submit">GUARDAR</button>
-      </form>
+               <label>$ </label>
+    <input type="text" name="Gas" id="Gas" />
 
-          
-          </div>
-        </div>
-      </div>
-    </div>
-     <div id="pie">Estes Software fue creado y diseñado para la administradora de edifios "Aconcagua", prohibida su reproduccion.</div>
-       </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/docs.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+          <h5>Sueldos: </h5>
+
+    <label>$ </label>
+    <input type="text" name="Sueldos" id="Sueldos" />
+
+    <br>
+    <br>
+
+    <button class="button" type="button">GUARDAR</button>
+
+    
+    
+    
+</form>
+ <div id="pie">Estes Software fue creado y diseñado para la administradora de edifios "Aconcagua", prohibida su reproduccion.</div>
+</body>
 </html>
-
