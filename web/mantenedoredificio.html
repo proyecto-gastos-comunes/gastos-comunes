@@ -1,21 +1,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+    <script src="jquery-ui-master/jquery-1.9.1.js"></script>
+    <script src="jquery-ui-master/jquery-ui.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>My First Grid</title>
+<title>Mantenedor edificio</title>
 <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui-1.8.2.custom.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="css/ui.jqgrid.css" />
+<link rel="stylesheet" href="css/estilo.css">
 <style type="text/css">
 html, body {
     margin: 0;
     padding: 0;
     font-size: 75%;
 }
+
 </style>
 <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
 <script src="js/i18n/grid.locale-en.js" type="text/javascript"></script>
 <script src="js/jquery.jqGrid.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function(){ 
+
 
   /*jQuery("#list").jqGrid({
  datatype: "local",
@@ -47,18 +52,25 @@ $(function(){
  for(var i=0;i<=mydata.length;i++)
   jQuery("#list4").jqGrid('addRowData',i+1,mydata[i]);*/
 
+
+
   jQuery("#list").jqGrid({
+    onSelectRow: function(id){
+      if(id && id!==lastSel){
+        jQuery('#list').restoreRow(lastSel);
+        lastSel=id;
+      }
+      jQuery('#list').editRow(id, true);
+    },
   datatype: "local",
   height: 250,
-    colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
+    colNames:['Nombre','Direccion','Cantidad de edificios',],
     colModel:[
-      {name:'id',index:'id', width:60, sorttype:"int"},
-      {name:'invdate',index:'invdate', width:90, sorttype:"date"},
-      {name:'name',index:'name', width:100},
-      {name:'amount',index:'amount', width:80, align:"right",sorttype:"float"},
-      {name:'tax',index:'tax', width:80, align:"right",sorttype:"float"},   
-      {name:'total',index:'total', width:80,align:"right",sorttype:"float"},    
-      {name:'note',index:'note', width:150, sortable:false}   
+      {name:'Nombre',index:'Nombre', width:150, sorttype:"int"},
+      {name:'Direccion',index:'Direccion', width:150, sorttype:"Direccion"},
+       {name:'Cantidadedificios',index:'Cantidadedificios', width:190, sorttype:"int"},
+
+      
     ],
     rowNum:5,
     rowList:[5,10,15],
@@ -66,39 +78,43 @@ $(function(){
     sortname: 'id',
     viewrecords: true,
     multiselect: true,
-    caption: "Manipulating Array Data",
+    caption: "Administrador de edificios",
     editurl:"someurl.php"
 });
 var mydata = [
-    {id:"1",invdate:"2007-10-01",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
-    {id:"2",invdate:"2007-10-02",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
-    {id:"3",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"},
-    {id:"4",invdate:"2007-10-04",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
-    {id:"5",invdate:"2007-10-05",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
-    {id:"6",invdate:"2007-09-06",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"},
-    {id:"7",invdate:"2007-10-04",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
-    {id:"8",invdate:"2007-10-03",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
-    {id:"9",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"}
+    {NºDepartamento:"201",Propietario:"2007-10-01"},
+    {NºDepartamento:"202",Propietario:"2007-10-02"},
+    {NºDepartamento:"203",Propietario:"2007-09-01"},
+    {NºDepartamento:"204",Propietario:"2007-10-04"},
+    {NºDepartamento:"205",Propietario:"2007-10-05"},
+    {NºDepartamento:"206",Propietario:"2007-09-06"},
+    {NºDepartamento:"207",Propietario:"2007-10-04"},
+    {NºDepartamento:"208",Propietario:"2007-10-03"},
+    {NºDepartamento:"209",Propietario:"2007-09-01"}
     ];
 for(var i=0;i<=mydata.length;i++)
   jQuery("#list").jqGrid('addRowData',i+1,mydata[i]);
 
+
+  
+
 }).navGrid("#pager",{edit:true,add:true,del:true}); 
-
-
-
 function alarma(nombre){
-
-
   alert("Datos guardados");
 }
 
+function alarma(nombre){
+  alert("Datos eliminados");
+}
+</script>
 
 
+<script type="text/javascript">
+  function () {
+    {name:'name',index:'name', width:100}
+  }
 
-    </script>
-
-
+</script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -106,8 +122,6 @@ function alarma(nombre){
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
-    <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -131,20 +145,12 @@ function alarma(nombre){
  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Gestion de edificios</a>
+          <a class="navbar-brand" href="#">Administrador analistas</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Buscar edificio</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
+            <li><a href="menu_adm.html">Home</a></li>
+            <li><a href="#">Salir</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -152,44 +158,102 @@ function alarma(nombre){
         </div>
       </div>
     </div>
+    <hr>
 
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview</a></li>
-            
-            <li><a href="menu_adm.html">Inicio</a></li>
-            <li><a href="agregaredificio.html">Agregar edificio</a></li>
-            <li><a href="mofificaredificio.html">Modificar edificio</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Eliminar edificio</a></li>
-            <li><a href="actualizaredificio.html">Actualizar edificio</a></li>
-             <h5><span class="feature"><img src="img/edificio.jpg" width="227" height="274" /></span></h5>
-            
-        <hr>
       
+       <h2 class="sub-header">Administrador de edificios</h2>
+      
+          <div class="table-responsive">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="accordion" id="leftMenu">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                              Categorías
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+                              Reportes
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="reporte_fichas.html"> Reporte fichas</a></li>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="reportePagoGastosComunes.html"> Reporte pago G.C.</a></li>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="R-GastosComunes.html"> Reporte G.C.</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseThree">
+                              Mantenenedor
+                            </a>
+                        </div>
+                        <div id="collapseThree" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-edit"></span><a href="formulariodecambios1.html"> Formulario de cambios</a></li>
+                                    <li><span class="glyphicon glyphicon-edit"></span><a href="mantenedordepartamento.html"> Mantenedor departamento</a></li>
+                                </ul>                 
+                            </div>
+                         </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+                              Pagos
+                            </a>
+                   
+<hr>
+
+                        </div>
+                        <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-euro"></span><a href="pagos.html"> Pagar G.C.</a></li>
+                                    <li><span class="glyphicon glyphicon-euro"></span><a href="recaudacion.html"> Pagar recaudación</a></li>
+                                </ul>                 
+                            </div>
+                         </div>
+                    </div>
+                </div>
+              </div>  
+
+              <marquee direction="LEFT">  <br />      <img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /> <img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /> <img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /> <img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /><img height="60" border="7" width="80" alt="" src="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" _fcksavedurl="img/edificio.jpg" /> </marquee> <br />
+
+
+
+
+          <div class="col-md-10">
+            
+            <table id="list">
+              <tr><td/></tr></table> 
+            <div id="pager"></div>
+            <div class="btn-group">
+              <hr>
+
+
+
+              
+  <button type="button" class="btn btn-default">Agregar</button>
+  <button type="button" class="btn btn-default" value="Guardar cambios"onClick=alarma();>Quitar</button>
+
+  <button type="button" class="btn btn-default" value="Guardar cambios"onClick=alarma();>Guardar cambios</button>
+</div>
+          </div> 
         </div>
-        <div class="col-sm-1 col-sm-offset-1 col-md-8 col-md-offset-1 min">
       
-          <h1 id="pageName"><span class="Estilo3"></span> <span class="feature"></span>
-           
-
-            
- 
+          <h1 id="pageName"><span class="Estilo3"></span> <span class="feature"></span> 
 <hr>
-
-    
-
-          <h2 class="sub-header">Edificios</h2>
-    
-         
-         
-                <table id="list"><tr><td/></tr></table> 
-<div id="pager"></div> 
 <hr>
-            <input type="button"= value="Guardar Cambios"onClick=alarma()>
               </body>
             </table>
           </div>
