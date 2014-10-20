@@ -82,15 +82,15 @@ $(function(){
     editurl:"someurl.php"
 });
 var mydata = [
-    {NºDepartamento:"201",Propietario:"2007-10-01"},
-    {NºDepartamento:"202",Propietario:"2007-10-02"},
-    {NºDepartamento:"203",Propietario:"2007-09-01"},
-    {NºDepartamento:"204",Propietario:"2007-10-04"},
-    {NºDepartamento:"205",Propietario:"2007-10-05"},
-    {NºDepartamento:"206",Propietario:"2007-09-06"},
-    {NºDepartamento:"207",Propietario:"2007-10-04"},
-    {NºDepartamento:"208",Propietario:"2007-10-03"},
-    {NºDepartamento:"209",Propietario:"2007-09-01"}
+    {Nombre:"las torres",Direccion:"2007-10-01"},
+    {Nombre:"los claveles",Direccion:"2007-10-02"},
+    {Nombre:"condominio sur",Direccion:"2007-09-01"},
+    {Nombre:"condominio norte",Direccion:"2007-10-04"},
+    {Nombre:"condominio luz",Direccion:"2007-10-05"},
+    {Nombre:"la esperanza",Direccion:"2007-09-06"},
+    {Nombre:"gran condominio",Direccion:"2007-10-04"},
+    {Nombre:"las codornices",Direccion:"2007-10-03"},
+    {Nombre:"condominio f roa",Direccion:"2007-09-01"}
     ];
 for(var i=0;i<=mydata.length;i++)
   jQuery("#list").jqGrid('addRowData',i+1,mydata[i]);
@@ -150,7 +150,7 @@ function alarma(nombre){
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="menu_adm.html">Home</a></li>
-            <li><a href="#">Salir</a></li>
+            <li><a href="login.html">Salir</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -158,10 +158,10 @@ function alarma(nombre){
         </div>
       </div>
     </div>
-    <hr>
+    
 
     <div class="container-fluid">
-      
+      <hr>
        <h2 class="sub-header">Administrador de edificios</h2>
       
           <div class="table-responsive">
@@ -202,6 +202,8 @@ function alarma(nombre){
                                 <ul>
                                     <li><span class="glyphicon glyphicon-edit"></span><a href="formulariodecambios1.html"> Formulario de cambios</a></li>
                                     <li><span class="glyphicon glyphicon-edit"></span><a href="mantenedordepartamento.html"> Mantenedor departamento</a></li>
+                                     <li><span class="glyphicon glyphicon-edit"></span><a href="mantenedorusuarios.html"> Mantenedor de usuarios</a></li>
+
                                 </ul>                 
                             </div>
                          </div>
