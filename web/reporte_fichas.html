@@ -1,6 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+    <script src="jquery-ui-master/jquery-1.9.1.js"></script>
+    <script src="jquery-ui-master/jquery-ui.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>reporte de fichas</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui-1.8.2.custom.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/ui.jqgrid.css" />
+<link rel="stylesheet" href="css/estilo.css">
+<style type="text/css">
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 75%;
+}
+</style>
+<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="js/i18n/grid.locale-en.js" type="text/javascript"></script>
+<script src="js/jquery.jqGrid.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){ 
+
+  /*jQuery("#list").jqGrid({
+ datatype: "local",
+ height: 250,
+    colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
+    colModel:[
+     {name:'id',index:'id', width:60, sorttype:"int"},
+     {name:'invdate',index:'invdate', width:90, sorttype:"date"},
+     {name:'name',index:'name', width:100},
+     {name:'amount',index:'amount', width:80, align:"right",sorttype:"float"},
+     {name:'tax',index:'tax', width:80, align:"right",sorttype:"float"},  
+     {name:'total',index:'total', width:80,align:"right",sorttype:"float"},  
+     {name:'note',index:'note', width:150, sortable:false}  
+    ],
+    multiselect: true,
+    caption: "Manipulating Array Data"
+ });
+ var mydata = [
+  {id:"1",invdate:"2007-10-01",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
+  {id:"2",invdate:"2007-10-02",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
+  {id:"3",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"},
+  {id:"4",invdate:"2007-10-04",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
+  {id:"5",invdate:"2007-10-05",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
+  {id:"6",invdate:"2007-09-06",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"},
+  {id:"7",invdate:"2007-10-04",name:"test",note:"note",amount:"200.00",tax:"10.00",total:"210.00"},
+  {id:"8",invdate:"2007-10-03",name:"test2",note:"note2",amount:"300.00",tax:"20.00",total:"320.00"},
+  {id:"9",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"}
+  ];
+ for(var i=0;i<=mydata.length;i++)
+  jQuery("#list4").jqGrid('addRowData',i+1,mydata[i]);*/
+
+  jQuery("#list").jqGrid({
+    onSelectRow: function(id){
+      if(id && id!==lastSel){
+        jQuery('#list').restoreRow(lastSel);
+        lastSel=id;
+      }
+      jQuery('#list').editRow(id, true);
+    },
+  datatype: "local",
+  height: 250,
+    colNames:['nombre','n° departamento', 'fichas vendidas'],
+    colModel:[
+      {name:'id',index:'id', width:200, sorttype:"var"},
+      {name:'invdate',index:'invdate', width:200, sorttype:"int"},
+      {name:'name',index:'name', width:200, sorttype:"int"}  
+    ],
+    rowNum:5,
+    rowList:[5,10,15],
+    pager: '#pager',
+    sortname: 'id',
+    viewrecords: true,
+    multiselect: true,
+    caption: "reporte de fichas",
+    editurl:"someurl.php"
+});
+var mydata = [
+    {id:"juan perez",invdate:"101",name:"8"},
+    {id:"elba lazo",invdate:"202",name:"10"},
+    {id:"aquiles bailo yo",invdate:"301",name:"12"},
+    {id:"juan salinas",invdate:"404",name:"9"},
+    {id:"sandra diaz",invdate:"505",name:"3"},
+    {id:"magaly lopez",invdate:"506",name:"33"},
+    {id:"loreto sepulveda",invdate:"604",name:"5"},
+    {id:"marcelo astorga",invdate:"703",name:"6"},
+    {id:"juan concha",invdate:"801",name:"22"}
+    ];
+for(var i=0;i<=mydata.length;i++)
+  jQuery("#list").jqGrid('addRowData',i+1,mydata[i]);
+  
+
+}).navGrid("#pager",{edit:true,add:true,del:true}); 
+function alarma(nombre){
+  alert("Datos guardados");
+}
+</script>
+
+
+<script type="text/javascript">
+  function () {
+    {name:'name',index:'name', width:100}
+  }
+
+</script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +112,11 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Sistema Venta De fichas lavanderia</title>
-
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
-    <link href="estilo.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -29,22 +130,16 @@
   </head>
 
   <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<li><a href=""></a></li>
+ <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Ventas De Fichas De Lavandería</a>
+          <a class="navbar-brand" href="#">Sistema de recaudacion de gastos comunes</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-             <li><a href="#">home</a></li>
-            <li><a href="#">salir</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Salir</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -54,184 +149,94 @@
     </div>
 
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview</a></li>
-            <li><a href="#">ver reporte</a></li>
-            <li><a href="#">mantenedor de departamento</a></li>
-            <li><a href="#">mantenedor de usuarios</a></li>
-             <li><a href="">mantenedor de edificio</a></li>
-            <li><a href="recaudacion.html">registro de recaudacion</a></li>
-              <li><a href="pagos.html">registro de pagos</a></li>
-
-              <img src="img/edificio.jpg" WIDTH=178 HEIGHT=180>
-          </ul>
-         
-          
-          
-        </div>
-        <br>
-  <br>
-         <h1 class="page-header" align="center">Reporte de ventas de ficha</h1>
-         
+      <hr>
+      <hr>
           <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  
-                  <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>nº departamento</th>
-                  <th>cantidad de fichas vendidas</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>               <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
+            <div class="row">
+              <div class="col-md-2">
+                <div class="accordion" id="leftMenu">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                              Categorías
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+                              Reportes
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="reporte_fichas.html"> Reporte fichas</a></li>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="reportePagoGastosComunes.html"> Reporte pago G.C.</a></li>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="R-GastosComunes.html"> Reporte G.C.</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseThree">
+                              Mantenenedor
+                            </a>
+                        </div>
+                        <div id="collapseThree" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-edit"></span><a href="mantenedordepartamento.html"> Mantenedor departamento</a></li>
+                                    <li><span class="glyphicon glyphicon-edit"></span><a href="mantenedoredificio.html"> Mantenedor edificio</a></li>
+                                </ul>                 
+                            </div>
+                         </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+                              Pagos
+                            </a>
+                        </div>
+                        <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-euro"></span><a href="pagos.html"> Pagar G.C.</a></li>
+                                    <li><span class="glyphicon glyphicon-euro"></span><a href="recaudacion.html"> Pagar recaudación</a></li>
+                                </ul>                 
+                            </div>
+                         </div>
+                    </div>
+                </div>
+              </div>  
+          <div class="col-md-10">
+            <h2 class="sub-header">Reporte de Fichas vendidas</h2>
+            <table id="list">
+              <tr><td/></tr></table> 
+            <div id="pager"></div>
+            <div class="btn-group">
+  
+</div>
+          </div> 
+        </div>
+      
+          <h1 id="pageName"><span class="Estilo3"></span> <span class="feature"></span> 
+<hr>
+<hr>
+              </body>
             </table>
           </div>
         </div>
       </div>
     </div>
-       
-      
-       
-        <br>
-        
-          
-        </label>
-      
-      </form>
-
-          
-          </div>
-        </div>
-      </div>
-    </div>
-
-     <div id="pie">Estes Software fue creado y diseñado para la administradora de edifios "Aconcagua", prohibida su reproduccion.</div>
-       </div>
+  
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-      </body>
-    </head>  
-</html>
-
