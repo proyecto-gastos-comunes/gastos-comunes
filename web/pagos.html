@@ -1,25 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-
-    <title>Sistema de recaudacion </title>
-
-
-     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- <link rel="icon" href="../../favicon.ico"> -->
+<link rel="stylesheet" href="css/estilo.css">
+<title>Reporte gastos comunes</title>
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/dashboard.css" rel="stylesheet">
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="js/ie-emulation-modes-warning.js"></script>
 
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.numeric.js"></script>
@@ -28,7 +24,8 @@
           $('#Agua').numeric();
           $('#Luz').numeric();
           $('#Gas').numeric();
-          $('#Sueldos').numeric();
+           $('#Conti').numeric();
+         
 
  
                   });
@@ -38,59 +35,92 @@
 <body>
 
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Sistema de recaudacion de pagos</a>
-        </div>
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="menu_adm.html">Sistema de Recaudacion para gastos comunes</a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="#">Home</a></li>
+<li><a href="#">Salir</a></li>
+</ul>
+<form class="navbar-form navbar-right">
+<input type="text" class="form-control" placeholder="Search...">
+</form>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<h2 class="sub-header">Reporte pago gastos comunes</h2>
+<div class="table-responsive">
+<div class="row">
+<div class="col-md-2">
+<div class="accordion" id="leftMenu">
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+Categorías
+</a>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+Reportes
+</a>
+</div>
+<div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+<div class="accordion-inner">
+<ul>
+<li><span class="glyphicon glyphicon-list-alt"></span><a href="reporte_fichas.html"> Reporte fichas</a></li>
+<li><span class="glyphicon glyphicon-list-alt"></span><a href="reportePagoGastosComunes.html"> Reporte pago G.C.</a></li>
+<li><span class="glyphicon glyphicon-list-alt"></span><a href="R-GastosComunes.html"> Reporte G.C.</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseThree">
+Mantenenedor
+</a>
+</div>
+<div id="collapseThree" class="accordion-body collapse" style="height: 0px; ">
+<div class="accordion-inner">
+<ul>
+<li><span class="glyphicon glyphicon-edit"></span><a href="mantenedordepartamento.html"> Mantenedor departamento</a></li>
+<li><span class="glyphicon glyphicon-edit"></span><a href="mantenedoredificio.html"> Mantenedor edificio</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="accordion-group">
+<div class="accordion-heading">
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+Pagos
+</a>
+</div>
+<div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+<div class="accordion-inner">
+<ul>
+<li><span class="glyphicon glyphicon-euro"></span><a href="pagos.html"> Pagar G.C.</a></li>
+<li><span class="glyphicon glyphicon-euro"></span><a href="recaudacion.html"> Pagar recaudación</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
-         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-           
-            <li><a href="#">home</a></li>
-            <li><a href="#">salir</a></li>
-          </ul>
 
-              </form>
-        </div>
-      </div>
-    </div>
-
-
-     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview</a></li>
-            <li><a href="#">ver reporte</a></li>
-            <li><a href="#">mantenedor de departamento</a></li>
-            <li><a href="#">mantenedor de usuarios</a></li>
-             <li><a href="">mantenedor de edificio</a></li>
-            <li><a href="recaudacion.html">registro de recaudacion</a></li>
-            <li><a href="reporte_fichas.html">registro de fichas</a></li>
-            <img src="img/edificio.jpg" WIDTH=178 HEIGHT=180>
-          </ul>
-         
-          
-          
-        </div>
-
-        
-     
-<div class="col-sm-7 col-sm-offset-1 col-md-5 col-md-offset-1 main">
-  <br>
-  <br>
-          <h1 class="page-header">Datos del usuario</h1>
-
-
-
-
+        <div class="col-md-10">
 
 
 <form method="post">
@@ -110,10 +140,10 @@
     <input type="text" name="Gas" id="Gas" />
 
 
-          <h5>Sueldos: </h5>
+          <h5>Contingencia: </h5>
 
     <label>$ </label>
-    <input type="text" name="Sueldos" id="Sueldos" />
+    <input type="text" name="Conti" id="Conti" />
 
     <br>
     <br>
@@ -124,6 +154,7 @@
     
     
 </form>
- <div id="pie">Estes Software fue creado y diseñado para la administradora de edifios "Aconcagua", prohibida su reproduccion.</div>
+</div>
+
 </body>
 </html>
