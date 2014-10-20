@@ -1,0 +1,171 @@
+<html>
+	<head>
+		<script src="jquery-ui-master/jquery-1.9.1.js"></script>
+    <script src="jquery-ui-master/jquery-ui.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<title>Formulario Modificar</title>
+
+		<script type="text/javascript" src="js/jquery-1.11.1.min"></script>
+		  <link rel="stylesheet" type="text/css"href="css/green/style.css">
+		   <link href="css/bootstrap.min.css" rel="stylesheet">
+		   <link href="dashboard.css" rel="stylesheet">
+		   <script src="js/ie-emulation-modes-warning.js"></script>
+		   <link rel="stylesheet" href="css/estilo.css">
+		<style type="text/css" >
+		
+
+		#caja
+		{
+
+			background: #f0f0f0;
+			width: 400px;
+            border:3px solid white ;
+            margin:  70px auto;
+            padding: 4em;
+            border-radius: 8ppx;
+
+		}
+        body 
+
+		{
+			background: white;
+		}
+
+		h1{
+
+		font-family: arial;
+		color: #black;
+}
+
+
+
+input [type=text],input[type=submit],input[type=password]
+		{ 
+	border-radius: 3px;
+	padding:2px;  
+}
+input [type=submit]:hover,form a:hover
+{
+	background: #0040ff;
+	cursor: pointer;
+}
+	</style>
+
+	</head>
+<body>
+	
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Administrador Analistas</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="menu_adm.html">Home</a></li>
+            <li><a href="#">Salir</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+    
+        
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+<div class="row">
+              <div class="col-md-2">
+                <div class="accordion" id="leftMenu">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                              Categorías
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
+                              Reportes
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="reporte_fichas.html"> Reporte fichas</a></li>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="reportePagoGastosComunes.html"> Reporte pago G.C.</a></li>
+                                    <li><span class="glyphicon glyphicon-list-alt"></span><a href="R-GastosComunes.html"> Reporte G.C.</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseThree">
+                              Mantenenedor
+                            </a>
+                        </div>
+                        <div id="collapseThree" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-edit"></span><a href="mantenedordepartamento.html"> Mantenedor departamento</a></li>
+                                    <li><span class="glyphicon glyphicon-edit"></span><a href="mantenedoredificio.html"> Mantenedor edificio</a></li>
+                                    <li><span class="glyphicon glyphicon-edit"></span><a href="mantenedorusuarios.html"> Mantenedor usuarios</a></li>
+                                </ul>                 
+                            </div>
+                         </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+                              Pagos
+                            </a>
+                        </div>
+                        <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><span class="glyphicon glyphicon-euro"></span><a href="pagos.html"> Pagar G.C.</a></li>
+                                    <li><span class="glyphicon glyphicon-euro"></span><a href="recaudacion.html"> Pagar recaudación</a></li>
+                                </ul>                 
+                            </div>
+                         </div>
+                    </div>
+                </div>
+              </div> 
+          <div class="col-md-10">
+            <div id="caja">
+	<center><h1> 
+	</h1></center> <blockquote>
+		<form>
+		<input type="text" placeholder="Usuario"name="nombre">
+		<hr>
+		<input type="text" placeholder="Password"name="nombre">
+		<hr>
+	 <button type="button" class="btn btn-default" value="Guardar cambios"onClick=alarma();>Guardar cambios</button>
+
+
+	</form></blockquote>
+</div>
+          </div> 
+        </div>
+	
+<marquee bgcolor="FF0000" direction="alternate"direcion="right">
+
+</marquee>
+<P>
+<p>
+<blockquote><p></p><blockquote/>
+</body>
+<script src=  "js/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+</html>
